@@ -36,10 +36,11 @@ namespace pz_5
             //    if (i % 19 == 0)
             //        Console.Write($"{i} ") ;
             //}
-            for (int i = 0, j = 99; j - i == 21; i++, j--)
-            {
-                Console.WriteLine(i + j);
-            }
+            //Console.WriteLine("задание 5");
+            //for (int i = 0, j = 99; j - i != 21; i++, j--)
+            //{
+            //    Console.WriteLine(i + j);
+            //}
 
         }
     }
