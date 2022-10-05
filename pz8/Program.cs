@@ -10,14 +10,14 @@ namespace pz8
     {
         static void Main(string[] args)
         {
-            Random rnd = new Random();
+            Random rand = new Random();
             int stolb = 5; // столбцов
-            int str = 15;  // строк
+            int str = 5;  // строк
             int[,] a = new int[str, stolb];
             for (int i = 0; i < str; i++)
                 for (int j = 0; j < stolb; j++)
                     // заполнение случайными числами
-                    a[i, j] = rnd.Next(100);
+                    a[i, j] = rand.Next(100);
             int MinRow, Temp;
             for (int i = 0; i < stolb; i++)
             {
