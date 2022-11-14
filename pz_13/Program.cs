@@ -8,19 +8,33 @@ namespace pz_13
 {
     internal class Program
     {
-        static double GetPogoda(double[] mas, double k)
+        static void MinusTemperature(double[] week)
         {
-
+            int count = 0;
+            for (int i = 0; i < week.Length; i++)
+            {
+                if (week[i] < 0)
+                {
+                    count++;
+                }
+            }
+            Console.WriteLine("Количество дней, в которых температура опускалась ниже нуля: " + count);
+            Console.ReadKey();
         }
-        //static void Main(string[] args)
-        //{
-        //    double[] m;
-        //    double n;
-        //    n = Convert.ToDouble(Console.ReadLine());
-
-        //}
-
-
-
+        static void Main(string[] args)
+        {
+            int length = 7;
+            double[] week = new double[length];
+            Console.WriteLine("Введите температуру за 7 дней:");
+            for (int i = 0; i < week.Length; i++)
+            {
+                week[i] = Convert.ToDouble(Console.ReadLine());
+            }
+            for (int i = 0; i < week.Length; i++)
+            {
+                Console.WriteLine(week[i] + "°C");
+            }
+            MinusTemperature(week);
+        }
     }
 }
