@@ -10,7 +10,7 @@ namespace pz_12
     {
         static void GetMinMax(double x, double y, out double z )
         {
-            
+
             if (x > y)
             {
                 z = x;
@@ -19,7 +19,9 @@ namespace pz_12
             {
                 z = y;
             }
-            z = Math.Max(x, y);
+            else
+                z = x;
+            
             Console.WriteLine(z);
         }
         static void Main(string[] args)
