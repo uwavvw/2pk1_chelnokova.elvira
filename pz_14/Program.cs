@@ -8,59 +8,65 @@ namespace pz_14
 {
     internal class Program
     {
-
-        /*1 задание
-        private static double a = -30;
-        static void rec(double n, double i)
-        {
-            
-            if (i < n)
-            {
-                double shag = 0.4;
-                i++;
-                a += shag;
-                rec(n, i);
-            }
-            else if (i == n)
-            {
-                Console.WriteLine(a);
-            }
-
-        }
         static void Main(string[] args)
-        {
-            int i = 0;
-            Console.WriteLine("Введите n-ый член прогрессии");
-            double n1 = double.Parse(Console.ReadLine());
-            rec(n1, i);
-            Console.ReadKey();   
-        }*/
-        //2 задание
-        private static double a = 7;
-        static void rec2(double n, double i)
-        {
-            if (i < n)
-            {
-                double shag = 0.5;
-                i++;
-                
-                a *= (Math.Pow(shag, n - 1)); 
-                rec2(n, i);
-            }
-            else if (i == n)
-            {
-                Console.WriteLine(a);
-            }
-        }
-        static void Main(string[] args)
-        {
-            int i = 0;
-            Console.WriteLine("Введите n-ый член прогрессии");
-            double n1 = double.Parse(Console.ReadLine());
-            rec2(n1,i);
+        
+       {
+            Console.WriteLine("Введите n:");
+            double n = double.Parse(Console.ReadLine());
+            double a1 = -30;
+            double b1 = 7;
+            Console.WriteLine("Задача 1");
+            Console.WriteLine(ArithmeticProgression(a1, n));
+            Console.WriteLine("Задача 2");
+            Console.WriteLine(Geometricprogression(b1, n));
+            Console.WriteLine("Задача 3");
+            Console.WriteLine(AllNumbers(58, -26));
             Console.ReadKey();
         }
-        //3 задание
-        //static void rec3 ( double a )
+        static double ArithmeticProgression(double a1, double n)
+        {
+            double d = 0.4;
+            if (n == 1)
+            {
+                return a1;
+            }
+            else
+            {
+                double result = ArithmeticProgression(a1 + d, --n);
+                return result;
+            }
+            
+        }
+        static double Geometricprogression(double b1, double n)
+        {
+            double q = 5;
+            if (n == 1)
+            {
+                return b1;
+
+            }
+            else
+            {
+                double result = Geometricprogression(b1 * q, --n);
+                return result;
+            }
+
+        }
+        static string AllNumbers(double A, double B)
+        {
+            if (A == B)
+            {
+                return Convert.ToString(A);
+            }
+            else if (A > B)
+            {
+                return A + " " + AllNumbers(A - 1, B);
+            }
+            else
+            {
+                return A + " " + AllNumbers(A + 1, B);
+            }
+        }
+        
     }
 }
