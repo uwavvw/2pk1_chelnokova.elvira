@@ -19,6 +19,7 @@ namespace pz_22
         DateTime registrationDate1;
         DateTime minDate = new DateTime(2000, 01, 01);
         DateTime maxDate = new DateTime(2022, 01, 01);
+       
         public Account()
         {
             id = int.Parse(Console.ReadLine());
@@ -32,19 +33,18 @@ namespace pz_22
             registrationDate1 = new DateTime(2019, 10, 10);
             
         }
-        public DateTime RegistrationDate
-        {
+         public DateTime RegistrationDate
+         {
             set
             {
-                if (value > minDate && value < maxDate)
+                if (value > minDate || value < maxDate)
                 {
                     registrationDate = value;
                 }
                 Console.WriteLine("дата не подходит");
             }
             get { return registrationDate; }  
-            
-        }
+         }
         public int Id
         {
             get { return id; }
@@ -55,6 +55,7 @@ namespace pz_22
 
         public void PrintInfo()
         {
+           
             if (id == 1)
             {
                 Console.WriteLine($"ID студента: {id}\nЕmail студента: {email}\nЛогин студента: {login}\nПароль студента: {pass}\nДата регистрации студента: {registrationDate}");
