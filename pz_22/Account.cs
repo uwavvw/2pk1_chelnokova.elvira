@@ -52,7 +52,7 @@ namespace pz_22
             get { return pass; }
             set
             {
-                if (Regex.IsMatch(value, pattern)) //создаем цикл в котором проверяем обнаружено ли в указанной входной строке соответствие заданному
+                if (Regex.IsMatch(value, pattern)) 
                 {
                     pass = value;
                 }
@@ -67,7 +67,7 @@ namespace pz_22
             get { return login; }
             set
             {
-                if (value == "") //создаем цикл в котором проверяем обнаружено ли в указанной входной строке соответствие заданному
+                if (value == "") 
                 {
                     Console.WriteLine("логина не существует");
                 }
@@ -82,7 +82,7 @@ namespace pz_22
             get { return email; }
             set
             {
-                if (value == "") //создаем цикл в котором проверяем обнаружено ли в указанной входной строке соответствие заданному
+                if (value == "") 
                 {
                     Console.WriteLine("почта не существует");
                 }
