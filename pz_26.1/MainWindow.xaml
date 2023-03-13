@@ -1,0 +1,72 @@
+﻿<Window x:Class="pz_26._1.MainWindow"
+        xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+        xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+        xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+        xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+        xmlns:local="clr-namespace:pz_26._1"
+        mc:Ignorable="d"
+        Title="Текстовый редактор" Height="450" Width="800">
+    <DockPanel LastChildFill="False" x:Name="Redactor">
+        <StackPanel DockPanel.Dock="Top" >
+            <Menu DockPanel.Dock ="Top" Background="Gray" >
+                <MenuItem Header="Файл" Height="24" Background="#FFA2A2A2" FontFamily="Microsoft YaHei" FontSize="14">
+                    <MenuItem Header = "Новый файл">
+                        <MenuItem.Icon>
+                            <Image Source="C:\Users\эля\Source\Repos\2pk1_chelnokova.elvira\pz_26.1\иконки\success_win_done_mark_icon_145928.png"/>
+                        </MenuItem.Icon>
+                    </MenuItem>
+                    <MenuItem Header = "Открыть">
+                        <MenuItem.Icon>
+                            <Image Source="C:\Users\эля\Source\Repos\2pk1_chelnokova.elvira\pz_26.1\иконки\success_win_done_mark_icon_145928.png"/>
+                        </MenuItem.Icon>
+                    </MenuItem>
+                    <MenuItem Header = "Сохранить">
+                        <MenuItem.Icon>
+                            <Image Source="C:\Users\эля\Source\Repos\2pk1_chelnokova.elvira\pz_26.1\иконки\savetheapplication_guardar_2958.png"/>
+                        </MenuItem.Icon>
+                    </MenuItem>
+                    <MenuItem Header = "Удалить">
+                        <MenuItem.Icon>
+                            <Image Source="C:\Users\эля\Source\Repos\2pk1_chelnokova.elvira\pz_26.1\иконки\trash_remove_icon_145922.png"/>
+                        </MenuItem.Icon>
+                    </MenuItem>
+                </MenuItem>
+                <MenuItem Header = "О программе" Height="24" HorizontalAlignment="Center" Background="#FFA2A2A2" FontFamily="Microsoft YaHei" FontSize="14" />
+            </Menu>
+            <WrapPanel DockPanel.Dock ="Top" Background="WhiteSmoke">
+                <Button  x:Name="button_1" Height="24" Width="31"  >
+                    
+                    <Button.ToolTip>
+                        <ToolTip Content="Курсив"/>
+                    </Button.ToolTip>
+                    <Image Source="C:\Users\эля\Source\Repos\2pk1_chelnokova.elvira\pz_26.1\иконки\italic_em_emphasis_format_editor_tool_icon_145968.png"/>
+                </Button>
+                <Button  x:Name="button_2" Height="24" Width="31" >
+                    <Button.ToolTip>
+                        <ToolTip Content="Полужирный шрифт"/>
+                    </Button.ToolTip>
+                    <Image Source="C:\Users\эля\Source\Repos\2pk1_chelnokova.elvira\pz_26.1\иконки\bold_format_editor_tool_icon_146015.png"/>
+                </Button>
+                <Button  x:Name="button_3" Height="24" Width="31" >
+                    <Button.ToolTip>
+                        <ToolTip Content="Подчеркивание"/>
+                    </Button.ToolTip>
+                    <Image Source="C:\Users\эля\Source\Repos\2pk1_chelnokova.elvira\pz_26.1\иконки\underline_format_editor_tool_icon_145920.png"/>
+                </Button>
+            </WrapPanel>
+        </StackPanel>
+        <StatusBar DockPanel.Dock="Bottom" Height="19" RenderTransformOrigin="0.5,0.5" >
+            <StatusBar.RenderTransform>
+                <TransformGroup>
+                    <ScaleTransform ScaleY="-1"/>
+                    <SkewTransform/>
+                    <RotateTransform/>
+                    <TranslateTransform/>
+                </TransformGroup>
+            </StatusBar.RenderTransform>
+        </StatusBar>
+        <ListBox DockPanel.Dock="Left" MinWidth="200" Background="AliceBlue"></ListBox >
+        <RichTextBox x:Name="TextBox" SpellCheck.IsEnabled = "True" Language="ru-ru" AcceptsTab="True" AcceptsReturn="True" VerticalScrollBarVisibility="Auto" HorizontalScrollBarVisibility="Auto" />
+
+    </DockPanel>
+</Window>
