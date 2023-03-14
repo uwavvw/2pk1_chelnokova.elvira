@@ -21,11 +21,20 @@ namespace pz_26._1
     /// </summary>
     public partial class MainWindow : Window
     {
+        
         public MainWindow()
         {
-            InitializeComponent();
             
+            InitializeComponent();
+            WorkFile.CreateFile();
+
         }
+        private void Button_Click(object sender, RoutedEventArgs e)
+        {
+            WorkFile.CreateFile();
+        }
+
+
     }
-   
+    
 }

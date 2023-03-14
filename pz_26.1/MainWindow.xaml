@@ -10,7 +10,7 @@
         <StackPanel DockPanel.Dock="Top" >
             <Menu DockPanel.Dock ="Top" Background="Gray" >
                 <MenuItem Header="Файл" Height="24" Background="#FFA2A2A2" FontFamily="Microsoft YaHei" FontSize="14">
-                    <MenuItem Header = "Новый файл">
+                    <MenuItem Header = "Новый файл" Click="">
                         <MenuItem.Icon>
                             <Image Source="C:\Users\эля\Source\Repos\2pk1_chelnokova.elvira\pz_26.1\иконки\success_win_done_mark_icon_145928.png"/>
                         </MenuItem.Icon>
@@ -34,8 +34,7 @@
                 <MenuItem Header = "О программе" Height="24" HorizontalAlignment="Center" Background="#FFA2A2A2" FontFamily="Microsoft YaHei" FontSize="14" />
             </Menu>
             <WrapPanel DockPanel.Dock ="Top" Background="WhiteSmoke">
-                <Button  x:Name="button_1" Height="24" Width="31"  >
-                    
+                <Button  x:Name="button_1" Height="24" Width="31" >
                     <Button.ToolTip>
                         <ToolTip Content="Курсив"/>
                     </Button.ToolTip>
