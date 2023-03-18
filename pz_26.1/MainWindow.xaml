@@ -7,25 +7,26 @@
         mc:Ignorable="d"
         Title="Текстовый редактор" Height="450" Width="800">
     <DockPanel LastChildFill="False" x:Name="Redactor">
+
         <StackPanel DockPanel.Dock="Top" >
             <Menu DockPanel.Dock ="Top" Background="Gray" >
                 <MenuItem Header="Файл" Height="24" Background="#FFA2A2A2" FontFamily="Microsoft YaHei" FontSize="14">
-                    <MenuItem Header = "Новый файл" Click="">
+                    <MenuItem Header = "Новый файл" Name="newfile" Click="newfile_Click">
                         <MenuItem.Icon>
                             <Image Source="C:\Users\эля\Source\Repos\2pk1_chelnokova.elvira\pz_26.1\иконки\success_win_done_mark_icon_145928.png"/>
                         </MenuItem.Icon>
                     </MenuItem>
-                    <MenuItem Header = "Открыть">
+                    <MenuItem Header = "Открыть" Name="openfile" Click="openfile_Click">
                         <MenuItem.Icon>
                             <Image Source="C:\Users\эля\Source\Repos\2pk1_chelnokova.elvira\pz_26.1\иконки\success_win_done_mark_icon_145928.png"/>
                         </MenuItem.Icon>
                     </MenuItem>
-                    <MenuItem Header = "Сохранить">
+                    <MenuItem Header = "Сохранить" Name="savefile" Click="savefile_Click">
                         <MenuItem.Icon>
                             <Image Source="C:\Users\эля\Source\Repos\2pk1_chelnokova.elvira\pz_26.1\иконки\savetheapplication_guardar_2958.png"/>
                         </MenuItem.Icon>
                     </MenuItem>
-                    <MenuItem Header = "Удалить">
+                    <MenuItem Header = "Удалить" Name="deletefile" Click="deletefile_Click">
                         <MenuItem.Icon>
                             <Image Source="C:\Users\эля\Source\Repos\2pk1_chelnokova.elvira\pz_26.1\иконки\trash_remove_icon_145922.png"/>
                         </MenuItem.Icon>
@@ -54,18 +55,29 @@
                 </Button>
             </WrapPanel>
         </StackPanel>
-        <StatusBar DockPanel.Dock="Bottom" Height="19" RenderTransformOrigin="0.5,0.5" >
-            <StatusBar.RenderTransform>
-                <TransformGroup>
-                    <ScaleTransform ScaleY="-1"/>
-                    <SkewTransform/>
-                    <RotateTransform/>
-                    <TranslateTransform/>
-                </TransformGroup>
-            </StatusBar.RenderTransform>
+
+        <StatusBar DockPanel.Dock="Bottom" Height="15">
+
+            <StatusBar.ItemsPanel>
+                <ItemsPanelTemplate>
+                    <Grid>
+                        <Grid.ColumnDefinitions>
+                            <ColumnDefinition Width="*"></ColumnDefinition>
+                            <ColumnDefinition Width="auto"></ColumnDefinition>
+                        </Grid.ColumnDefinitions>
+                    </Grid>
+                </ItemsPanelTemplate>
+            </StatusBar.ItemsPanel>
+            <TextBlock HorizontalAlignment="Left" VerticalAlignment="Center" FontSize="9">Текст слева</TextBlock>
+            <StatusBarItem Grid.Column="1">
+                <TextBlock Name="cursorPosition" VerticalAlignment="Center" FontSize="9" >справа</TextBlock>
+
+            </StatusBarItem>
+
         </StatusBar>
         <ListBox DockPanel.Dock="Left" MinWidth="200" Background="AliceBlue"></ListBox >
-        <RichTextBox x:Name="TextBox" SpellCheck.IsEnabled = "True" Language="ru-ru" AcceptsTab="True" AcceptsReturn="True" VerticalScrollBarVisibility="Auto" HorizontalScrollBarVisibility="Auto" />
 
+        <RichTextBox x:Name="RTextBox" SpellCheck.IsEnabled = "True" Language="ru-ru" AcceptsTab="True" AcceptsReturn="True" VerticalScrollBarVisibility="Auto" HorizontalScrollBarVisibility="Auto"  />
+        <TextBox></TextBox>
     </DockPanel>
 </Window>

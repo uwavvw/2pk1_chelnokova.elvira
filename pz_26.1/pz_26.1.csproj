@@ -8,4 +8,26 @@
     <UseWPF>true</UseWPF>
   </PropertyGroup>
 
+  <ItemGroup>
+    <None Remove="иконки\bold_format_editor_tool_icon_146015.png" />
+    <None Remove="иконки\italic_em_emphasis_format_editor_tool_icon_145968.png" />
+    <None Remove="иконки\savetheapplication_guardar_2958.png" />
+    <None Remove="иконки\success_win_done_mark_icon_145928.png" />
+    <None Remove="иконки\trash_remove_icon_145922.png" />
+    <None Remove="иконки\underline_format_editor_tool_icon_145920.png" />
+  </ItemGroup>
+
+  <ItemGroup>
+    <Resource Include="иконки\bold_format_editor_tool_icon_146015.png" />
+    <Resource Include="иконки\italic_em_emphasis_format_editor_tool_icon_145968.png" />
+    <Resource Include="иконки\savetheapplication_guardar_2958.png" />
+    <Resource Include="иконки\success_win_done_mark_icon_145928.png" />
+    <Resource Include="иконки\trash_remove_icon_145922.png" />
+    <Resource Include="иконки\underline_format_editor_tool_icon_145920.png" />
+  </ItemGroup>
+
+  <ItemGroup>
+    <Folder Include="data\" />
+  </ItemGroup>
+
 </Project>
