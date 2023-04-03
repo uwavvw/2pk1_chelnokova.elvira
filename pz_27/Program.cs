@@ -8,93 +8,61 @@ namespace pz_27
 {
     internal class Program
     {
-        static void Main(string[] args)
+        struct ZNAK
         {
-            ZNAK[] BOOK = new ZNAK[8];
-            int[] bday = new int[3];
-            Console.WriteLine("Введите количество структур");
-            int value = int.Parse(Console.ReadLine());
-            for (int i = 1; i < 8; i++)
-            {
-                Console.WriteLine($"{i}) Введите Имя:"); 
-                string name = Console.ReadLine();
-                Console.WriteLine(" Введите Знак Зодиака:");
-                string znakzod = Console.ReadLine();
-                Console.WriteLine(" Введите число рождения:");
-                int dd = int.Parse(Console.ReadLine());
-                Console.WriteLine(" Введите месяц Рождения:");
-                int mm = int.Parse(Console.ReadLine());
-                Console.WriteLine(" Введите год Рождения:");
-                int gg = int.Parse(Console.ReadLine());
-               
-            }
-            //for (int i = 0; i < 8; i++)
-            //{
-            //    Console.WriteLine("Введите Имя:");
-            //    string name = Console.ReadLine();
-            //    Console.WriteLine("Введите Знак Зодиака:");
-            //    string zodiak = Console.ReadLine();
-            //    //Console.WriteLine("Введите число рождения:");
-            //    //int dd = int.Parse(Console.ReadLine()); 
-            //    //Console.WriteLine("Введите месяц Рождения:");
-            //    //int mm = int.Parse(Console.ReadLine());
-            //    //Console.WriteLine("Введите год Рождения:");
-            //    //int gg = int.Parse(Console.ReadLine());
-            //    Console.WriteLine("Введите дату рождения:");
-            //    string[] bd = Console.ReadLine().Split(); 
-            //    int[] bday = new int[3];
-            //    for (int j = 0; j < 3; j++)
-            //    {
-            //        bday[j] = int.Parse(bd[j]);
-            //    }
-            //   
+            public string NAME;
+            public string ZODIAC;
+            public int[] BDAY;
 
-            //}
-            ZNAK men1 = new ZNAK ("Иван Иванов", "Весы", new int[] { 12, 10, 1999 } );
-            ZNAK men2 = new ZNAK("Роман Романов", "Овен", new int[] { 19, 04, 2001 });
-            ZNAK men3 = new ZNAK("Софья Алексеевна", "Дева", new int[] { 02, 09, 1989 });
-            ZNAK men4 = new ZNAK("Александр Сидоров", "Рак", new int[] { 17, 07, 2005 });
 
-            Console.WriteLine("Введите Знак Зодиака:");
-            string zodiak = Console.ReadLine();
-            if (zodiak == "весы" || zodiak == "Весы")
-            {
-                men1.PrintInfo();
-            }
-            else if (zodiak == "овен" || zodiak == "Овен")
-            {
-                men2.PrintInfo();
-            }
-            else if (zodiak == "дева" || zodiak == "Дева")
-            {
-                men3.PrintInfo();
-            }
-            else if (zodiak == "рак" || zodiak == "Рак")
-            {
-                men4.PrintInfo();
-            }
-            else
-                Console.WriteLine("Данных не существует");
-            Console.ReadKey();
         }
-    }
-    struct ZNAK
-    {
-       public string NAME;
-       public string ZODIAC;
-       public int[] BDAY;
-
-        public ZNAK(string name, string zodiak, int[] bday)
-        {
-            NAME = name;
-            ZODIAC = zodiak;
-            BDAY = new int[bday.Length];
-            BDAY = bday;
-        }
-        public void PrintInfo()
-        {
-            Console.WriteLine($"Имя и Фамилия: {NAME}\nЗнак Зодиака: {ZODIAC}\nДень рождение: {BDAY[0]}.{BDAY[1]}.{BDAY[2]}");
-        }
-
+        
+        
+            static void Main(string[] args)
+            {
+                ZNAK[] BOOK = new ZNAK[8];
+                for (int i = 0; i < 8; i++)
+                {
+                    Console.WriteLine("Введите Имя:");
+                    BOOK[i].NAME = Console.ReadLine();
+                    Console.WriteLine("Введите Знак Зодиака:");
+                    BOOK[i].ZODIAC = Console.ReadLine();
+                    Console.WriteLine("Введите День рождение, нажимая Enter после каждого введенного числа:");
+                    BOOK[i].BDAY = new int[3];
+                    for (int j = 0; j < 3; j++)
+                    {
+                        BOOK[i].BDAY[j] = int.Parse(Console.ReadLine());
+                    }
+                }
+                Array.Sort(BOOK, (a, b) =>
+                {
+                    int fdsf = a.BDAY[2].CompareTo(b.BDAY[2]);
+                    if (fdsf == 0)
+                    {
+                        fdsf = a.BDAY[1].CompareTo(b.BDAY[1]);
+                        if (fdsf == 0)
+                        {
+                            fdsf = a.BDAY[0].CompareTo(b.BDAY[0]);
+                        }
+                    }
+                    return fdsf;
+                });
+                Console.WriteLine("Введите знак зодиака человека, которого вы хотите узнать:");
+                string zodiak = Console.ReadLine();
+                Console.WriteLine($"Люди под знаком зодиака: {zodiak}");
+                foreach (ZNAK person in BOOK)
+                {
+                    if (person.ZODIAC == zodiak)
+                    {
+                        Console.WriteLine($"Имя и Фамилия: {person.NAME}\nЗнак Зодиака: {person.ZODIAC}\nДень рождение: {person.BDAY[0]}.{person.BDAY[1]}.{person.BDAY[2]}");
+                    }
+                    else if (person.ZODIAC != zodiak)
+                    {
+                        Console.WriteLine("Данные не найдены");
+                    }
+                }
+                Console.ReadKey();
+            }
+        
     }
 }
