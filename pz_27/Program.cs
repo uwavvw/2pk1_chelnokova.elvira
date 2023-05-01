@@ -14,7 +14,6 @@ namespace pz_27
             public string ZODIAC;
             public int[] BDAY;
 
-
         }
         
         
