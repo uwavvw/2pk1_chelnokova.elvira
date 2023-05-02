@@ -82,7 +82,7 @@ namespace ClassLibrary1
                 accounts = null;
             else
             {
-                // уменьшаем массив счетов, удаляя из него закрытый счет
+                // уменьшаем массив счетов, удаляя из него закрытый с
                 T[] tempAccounts = new T[accounts.Length - 1];
                 for (int i = 0, j = 0; i < accounts.Length; i++)
                 {
