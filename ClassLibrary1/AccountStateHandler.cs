@@ -13,10 +13,10 @@ namespace ClassLibrary1
 
     public class AccountEventArgs
     {
-        public string Massage { get; set; }
-        public int Sum { get; private set; }
+        public decimal Massage { get; set; }
+        public string Sum { get; private set; }
 
-        public AccountEventArgs(int a, string sms)
+        public AccountEventArgs(string a, decimal sms)
         {
             Sum = a;
             Massage = sms;

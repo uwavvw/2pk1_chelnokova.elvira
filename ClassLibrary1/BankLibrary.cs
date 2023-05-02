@@ -12,9 +12,6 @@ namespace BankLibrary
         void Put(decimal sum);
         decimal Withdraw(decimal sum);
         
-
-
-        
     }
     public abstract class Account: IAccount
     {
@@ -51,7 +48,6 @@ namespace BankLibrary
             if (handler != null && e != null)
                 handler(this, e);
         }
-        // вызов отдельных событий. Для каждого события определяется свой витуальный метод
         protected virtual void OnOpened(AccountEventArgs e)
         {
             CallEvent(e, Opened);
@@ -77,5 +73,42 @@ namespace BankLibrary
             _sum += sum;
             OnAdded(new AccountEventArgs("На счет поступило " + sum, sum));
         }
+        public virtual decimal Withdraw(decimal sum)
+        {
+            decimal result = 0;
+            if (sum <= _sum)
+            {
+                _sum -= sum;
+                result = sum;
+                OnWithdrawed(new AccountEventArgs("Сумма " + sum + " снята со счета " + _id, sum));
+            }
+            else
+            {
+                OnWithdrawed(new AccountEventArgs("Недостаточно денег на счете " + _id, 0));
+            }
+            return result;
+        }
+        protected internal virtual void Open()
+        {
+            OnOpened(new AccountEventArgs("Открыт новый счет! Id счета: " + this._id, this._sum));
+        }
+        protected internal virtual void Close()
+        {
+            OnClosed(new AccountEventArgs("Счет " + _id + " закрыт. Итоговая сумма: " + CurrentSum,
+           CurrentSum));
+        }
+        protected internal void IncrementDays()
+        {
+            _days++;
+        }
+        protected internal virtual void Calculate()
+        {
+            decimal increment = _sum * _percentage / 100;
+            _sum = _sum + increment;
+            OnCalculated(new AccountEventArgs("Начислены проценты в размере: " + increment,
+           increment));
+        }
+
     }
+
 }
