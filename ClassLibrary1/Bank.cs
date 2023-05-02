@@ -69,7 +69,7 @@ namespace ClassLibrary1
                 throw new Exception("Счет не найден");
             account.Withdraw(sum);
         }
-        // закрытие счета
+        
         public void Close(int id)
         {
             int index;
