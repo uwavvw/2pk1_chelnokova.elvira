@@ -1,0 +1,8 @@
+C:\Users\эля\Source\Repos\2pk1_chelnokova.elvira\pz_28.2\bin\Debug\pz_28.2.exe.config
+C:\Users\эля\Source\Repos\2pk1_chelnokova.elvira\pz_28.2\bin\Debug\pz_28.2.exe
+C:\Users\эля\Source\Repos\2pk1_chelnokova.elvira\pz_28.2\bin\Debug\pz_28.2.pdb
+C:\Users\эля\Source\Repos\2pk1_chelnokova.elvira\pz_28.2\obj\Debug\pz_28.2.csproj.AssemblyReference.cache
+C:\Users\эля\Source\Repos\2pk1_chelnokova.elvira\pz_28.2\obj\Debug\pz_28.2.csproj.SuggestedBindingRedirects.cache
+C:\Users\эля\Source\Repos\2pk1_chelnokova.elvira\pz_28.2\obj\Debug\pz_28.2.csproj.CoreCompileInputs.cache
+C:\Users\эля\Source\Repos\2pk1_chelnokova.elvira\pz_28.2\obj\Debug\pz_28.2.exe
+C:\Users\эля\Source\Repos\2pk1_chelnokova.elvira\pz_28.2\obj\Debug\pz_28.2.pdb
